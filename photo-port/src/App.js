@@ -5,10 +5,11 @@ import "./App.css";
 import Nav from "./components/Nav";
 import About from "./components/About";
 // import Contact from "./components/Contact";
-// import Projects from "./components/Projects";
+import Projects from "./components/Projects";
 
 function App() {
   const [categories] = useState([
+   
     {
       name: 'Projects',
       description: 'here are a few of my projects',
@@ -29,9 +30,9 @@ function App() {
       ></Nav>
       <main>
         <div>
-          {/* <Contact></Contact>
-          <Projects></Projects> */}
-          <About></About>
+          {/* <Contact></Contact> */}
+          <Projects currentCategory={currentCategory}></Projects>
+           <About></About>
 
         </div>
       </main>

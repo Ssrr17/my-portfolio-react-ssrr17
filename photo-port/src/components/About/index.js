@@ -4,7 +4,7 @@ import coverImage from "../../assets/images/cover-photo.JPG";
 function MyProfile() {
   return (
     <section className="my-5">
-      <h1 id="myprofile">My Profile</h1>
+      <h1 id="myprofile"> About ME ?</h1>
 
       <div className="profiletext">
        <p>Name : Salieu Sarr DOB : 04 - 20 - 1988 Location : Plainfield, NJ USA
