@@ -1,22 +1,32 @@
-import React from "react";
+import React from 'react';
+import { capitalizeFirstLetter } from '../../utils/helpers';
+import photo from '../../assets/images/runbud.jpeg'
 
 function Projects() {
+
+  const currentCategory = {
+    name: "Projects",
+    description:
+      "A website that offers fitness training services",
+  };
   return (
-    <section className="my-5">
-      <h1 id="projects"> Projects </h1>
-      <div class="work1">
-                <h3>Run - Buddy </h3>
-
-                <div class="work-info">
-                  <a class="runbud" href="../../src/assets/cover/run buddy background.jpg" title="Run Buddy" id="runbud">photo</a>
-                    <p>
-                        A website to offer fitness training services, built with HTML ans CSS.
-                    </p>
-
-                </div>
-            </div>
-    </section>
+    <section>
+    <h1>{capitalizeFirstLetter(currentCategory.name)}</h1>
+    <p>RUN-BUDDY</p>
+    <div className="flex-row">
+    <img
+            src={photo}
+            alt="running"
+            className="img-thumbnail mx-1"
+          />
+    </div>
+  </section>
   );
 }
 
+
 export default Projects;
+
+
+
+

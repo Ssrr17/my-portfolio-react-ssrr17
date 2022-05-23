@@ -1,5 +1,5 @@
 import React from "react";
-import coverImage from "../../assets/cover/cover-photo.JPG";
+import coverImage from "../../assets/images/cover-photo.JPG";
 
 function MyProfile() {
   return (
