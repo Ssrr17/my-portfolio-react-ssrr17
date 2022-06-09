@@ -1,43 +1,40 @@
-import React from 'react';
-import { capitalizeFirstLetter } from '../../utils/helpers';
-// import photo from '../../assets/images/runbud.jpeg'
+import { portfolios } from "../../assets/data-files/content";
+import Button from "react";
 
-function Projects(props) {
-
-  const { currentCategory } = props;
+const Projects = () => {
   return (
-    <section>
-      <h1 data-testid="h1tag">{capitalizeFirstLetter(currentCategory.name)}</h1>
-      <p>{currentCategory.description}</p>
-      {/* <PhotoList category={currentCategory.name} /> */}
-    </section>
+    <>
+      {portfolios.map((portfolio) => (
+        <div key={portfolio.id} className="col-lg-4">
+          {portfolio.name}
+          <div className="card mb-3">
+            <img
+              className="card-img-top img-fluid"
+              src={portfolio.image}
+              alt={portfolio.altTag}
+            />
+            </div>
+             <article className="card-body">
+              <h5 className="card-title">{portfolio.name}</h5>
+             <p className="card-text">{portfolio.description}</p>
+              <a href={portfolio.site} variant="outline-dark" size="sm">
+                {portfolio.siteName}
+              </a>{" "}
+               <a href={portfolio.repo} variant="outline-dark" size="sm">
+                {portfolio.repoName}
+              </a>
+            </article>
+        </div>
+      ))}
+      {/* {portfolios.map((portfolio) => (
+        
+         
+           
+          </div>
+        </div> 
+       ))} */}
+    </>
   );
+};
 
-
-
-//   const currentCategory = {
-//     name: "Projects",
-//     description:
-//       "A website that offers fitness training services",
-//   };
-//   return (
-//     <section>
-//     <h1>{capitalizeFirstLetter(currentCategory.name)}</h1>
-//     <p>RUN-BUDDY</p>
-//     <div className="flex-row">
-//     <img
-//             src={photo}
-//             alt="running"
-//             className="img-thumbnail mx-1"
-//           />
-//     </div>
-//   </section>
-//   );
-}
-
-
- export default Projects;
-
-
-
-
+export default Projects;

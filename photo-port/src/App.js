@@ -4,20 +4,24 @@ import "./App.css";
 
 import Nav from "./components/Nav";
 import About from "./components/About";
-// import Contact from "./components/Contact";
+
+import Footer from "./components/Footer";
+import Portfolio from "./components/Portfolio";
 import Projects from "./components/Projects";
+import Contact from "./components/Contact";
+// import Resume from "./components/"
 
 function App() {
-  const [categories] = useState([
-   
+  const categories = [
+    { name: "About" },
+
     {
-      name: 'Projects',
-      description: 'here are a few of my projects',
+      name: "Projects",
+      description: "here are a few of my projects",
     },
-    { name: 'contact', description: 'Portraits of people in my life' },
-    { name: 'resume', description: 'Delicious delicacies' },
-    
-  ]);
+    { name: "Contact", description: "Portraits of people in my life" },
+    { name: "Resume", description: "Delicious delicacies" },
+  ];
 
   const [currentCategory, setCurrentCategory] = useState(categories[0]);
 
@@ -30,10 +34,11 @@ function App() {
       ></Nav>
       <main>
         <div>
-          {/* <Contact></Contact> */}
-          <Projects currentCategory={currentCategory}></Projects>
-           <About></About>
 
+          {currentCategory.name==="Projects" && <Projects />}
+          {currentCategory.name==="Contact" && <Contact />}
+          <About></About>
+          <Footer />
         </div>
       </main>
     </div>
@@ -46,7 +51,7 @@ export default App;
 
 // function App() {
 //   const [selectedPage, setSelectedPage] = useState("my profile");
- 
+
 //   return (
 //     <div>
 //       <Nav selectedPage={selectedPage} setSelectedPage={setSelectedPage}></Nav>
